@@ -1,0 +1,33 @@
+{
+  "name": "fpt-nx-workspace-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/fpt-nx-workspace-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/fpt-nx-workspace-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "fpt-nx-workspace:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "fpt-nx-workspace:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "fpt-nx-workspace:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/fpt-nx-workspace-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["fpt-nx-workspace"]
+}
