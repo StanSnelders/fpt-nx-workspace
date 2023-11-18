@@ -14,7 +14,20 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@football-position-training/features": [
+        "libs/football-position-training/features/src/index.ts"
+      ],
+      "@fpt-nx-workshop/football-position-training/common": [
+        "libs/football-position-training/common/src/index.ts"
+      ],
+      "@fpt-nx-workspace/backend/dto": ["libs/backend/dto/src/index.ts"],
+      "@fpt-nx-workspace/backend/features": [
+        "libs/backend/features/src/index.ts"
+      ],
+      "@fpt-nx-workspace/shared/api": ["libs/shared/api/src/index.ts"],
+      "@fpt-nx-workspace/ui": ["libs/share-a-meal/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
